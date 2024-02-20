@@ -1,0 +1,33 @@
+<div class="search">
+  <img src="/assets/icons/Search.svg" alt="search" />
+  <input
+    #inputSearch
+    class="search__input"
+    type="text"
+    [placeholder]="placeholder"
+    (keyup)="handleInputValue($event)"
+  />
+  @if (showOptions) {
+  <img
+    class="search__close"
+    src="/assets/icons/close.svg"
+    alt="close"
+    (click)="clearInput()"
+  />
+  @if(valueFound){
+  <button class="search__options search__options-pos" (click)="onSelectValue()">
+    <img [src]="valueFound.avatar_url" alt="option" />
+    <div>
+      <p>{{ valueFound.name }}</p>
+      <p>{{ valueFound.bio }}</p>
+    </div>
+  </button>
+  } @else {
+  <button
+    class="search__options search__options-not-found"
+    (click)="onSelectValue()"
+  >
+    <p>No username found</p>
+  </button>
+  } }
+</div>

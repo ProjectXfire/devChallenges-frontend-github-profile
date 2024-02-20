@@ -1,0 +1,24 @@
+<section class="user-info">
+  <div class="user-info__avatar-space"></div>
+  <div class="user-info__data">
+    <app-data-field
+      field="Followers"
+      [value]="githubService.getProfile?.followers?.toString()"
+    />
+    <app-data-field
+      field="Following"
+      [value]="githubService.getProfile?.following?.toString()"
+    />
+    <app-data-field
+      field="Location"
+      [value]="githubService.getProfile?.location"
+    />
+  </div>
+  <picture class="user-info__avatar">
+    @if (githubService.getProfile) {
+    <img [src]="githubService.getProfile.avatar_url" alt="avatar" />
+    } @else {
+    <img src="/assets/images/hero-image-github-profile.png" alt="avatar" />
+    }
+  </picture>
+</section>

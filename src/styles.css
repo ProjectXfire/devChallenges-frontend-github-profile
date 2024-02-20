@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --text-xl: 32px;
+  --text-l: 20px;
+  --text-m: 16px;
+  --text-s: 12px;
+  --color-1: #111729;
+  --color-2: #1d1b48;
+  --color-3: #3662e3;
+  --color-4: #20293a;
+  --color-5: #364153;
+  --color-6: #4a5567;
+  --color-7: #cdd5e0;
+  --color-8: #a1abb9;
+  --border-radius-1: 10px;
+  --border-radius-2: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("./assets/fonts/BeVietnamPro-Medium.ttf"),
+    url("./assets/fonts/BeVietnamPro-Bold.ttf"),
+    url("./assets/fonts/BeVietnamPro-SemiBold.ttf");
+}
+
+html {
+  scrollbar-width: thin;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+body {
+  color: var(--color-7);
+  background-color: var(--color-4);
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+a {
+  font-family: inherit;
+  text-decoration: none;
+  font-size: inherit;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

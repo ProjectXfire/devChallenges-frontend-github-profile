@@ -1,0 +1,9 @@
+.link {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.link a {
+  color: var(--color-8);
+}

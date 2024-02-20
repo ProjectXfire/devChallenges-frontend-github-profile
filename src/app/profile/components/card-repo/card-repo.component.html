@@ -1,0 +1,40 @@
+<a class="card" [href]="data.html_url" target="_blank">
+  <h1 class="card__name">{{ data.projectName }}</h1>
+  <p class="card__description">
+    {{ data.description | maxText : maxText }} @if (data.description.length >
+    maxText) {<span
+      class="more"
+      (mouseover)="onMouseOver()"
+      (mouseleave)="onMouseLeave()"
+      >... @if (show) {
+      <span
+        class="card__description-full"
+        [ngClass]="{
+          'show-more-animate': fadeIn,
+          'hide-more-animate': !fadeIn
+        }"
+        >{{ data.description }}</span
+      >
+      } </span
+    >}
+  </p>
+  <div class="card__detail">
+    <div class="card-items">
+      @if (data.license) {
+      <div class="item">
+        <img src="/assets/icons/Chield_alt.svg" alt="stars" />
+        <p>{{ data.license }}</p>
+      </div>
+      }
+      <div class="item">
+        <img src="/assets/icons/Nesting.svg" alt="forks" />
+        <p>{{ data.forks }}</p>
+      </div>
+      <div class="item">
+        <img src="/assets/icons/Star.svg" alt="stars" />
+        <p>{{ data.watchers }}</p>
+      </div>
+    </div>
+    <p class="updated">updated {{ data.updatedAt }} days ago</p>
+  </div>
+</a>

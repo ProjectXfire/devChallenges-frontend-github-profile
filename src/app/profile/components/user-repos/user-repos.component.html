@@ -1,0 +1,25 @@
+<section>
+  <h1 class="user-repos__name">{{ githubService.getProfile?.name }}</h1>
+  <p class="user-repos__bio">{{ githubService.getProfile?.bio }}</p>
+  @if ( githubService.getProfile && githubService.getProfile.repositories.length
+  === 0) {
+  <p class="user-repos__not-found">No repositories found</p>
+  }
+  <ul class="user-repos__list">
+    @for (item of githubService.getProfile?.repositories; track $index) {
+    <li>
+      <app-card-repo
+        [data]="{
+          projectName: item.name,
+          description: item.description ?? '',
+          forks: item.forks,
+          html_url: item.html_url,
+          watchers: item.watchers,
+          updatedAt: transformDate(item.updated_at),
+          license: item.license ? item.license.spdx_id : null
+        }"
+      />
+    </li>
+    }
+  </ul>
+</section>

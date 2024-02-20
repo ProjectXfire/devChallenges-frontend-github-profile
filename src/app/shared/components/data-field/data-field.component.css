@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+}
+
+.field {
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-1);
+  border-radius: var(--border-radius-1);
+  gap: 25px;
+  color: var(--color-5);
+}
+
+.field__key {
+  color: var(--color-6);
+  font-weight: 600;
+}
+
+.field__value {
+  color: var(--color-7);
+}
+
+.field__separator {
+  width: 1px;
+  height: 35px;
+  background-color: var(--color-6);
+}
